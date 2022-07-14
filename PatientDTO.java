@@ -7,7 +7,7 @@ class PatientDTO
 	private int id;
 	private String name;
 	private	String address;
-	private Gender gender;
+	//private Gender gender;
 	private long contactNo;
 	
 	//getter and setter method
@@ -36,14 +36,14 @@ class PatientDTO
 	{
 		this.address = address;
 	}
-	public Gender getGender()
+	/*public Gender getGender()
 	{
 		return gender;
 	}
 	public void setGender(Gender gender)
 	{
 		this.gender = gender;
-	}
+	}*/
 	public long getContactNo()
 	{
 		return contactNo;

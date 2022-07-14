@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 class HospitalTester
 {
 	public static void main(String args[]){
@@ -33,6 +32,50 @@ class HospitalTester
 	hos.createPatient(dto);
    }
    hos.getPatientDetails();
+ 
+/* 
+   //invoking updated address of patients
+   
+   System.out.println("Entre the patient existing id");
+   int existingID = sc.nextInt();
+   System.out.println("Entre the patient updated address");
+   String updatedAddress = sc.next();
+   hos.updatedPatientAddressById(existingID,updatedAddress);
+   
+   hos.getPatientDetails();
+   
+      //invoking updated name of patients
+   
+   System.out.println("Entre the patient existing id");
+   int existingId = sc.nextInt();
+   System.out.println("Entre the patient updated name");
+   String updatedName = sc.next();
+   
+   hos.updatedPatientNameById(existingId,updatedName);
+   
+   hos.getPatientDetails();
+   
+       //invoking updated name of patients by contact no
+   
+   System.out.println("Entre the patient existing contactno");
+   long existingContactNo = sc.nextLong();
+   System.out.println("Entre the patient updated name");
+   String isUpdatedName = sc.next();
+   
+   hos.updatedPatientNameByContactNo(existingContactNo,isUpdatedName);
+   
+   hos.getPatientDetails();
+   
+   */
+  
+   //deleting patient name from id
+   
+      System.out.println("the patient existing name is deleted : ");
+   String deleteName = sc.next();
+   hos.deletePatientByName(deleteName);
+     
+
+	 hos.getPatientDetails();     
 	
 	/*	PatientDTO dto1 = new PatientDTO();
 	 
