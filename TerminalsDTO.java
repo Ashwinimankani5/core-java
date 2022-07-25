@@ -5,8 +5,8 @@ class TerminalsDTO
 		System.out.println("terminal is created");
 	}
 	
-	int id;
-	String name;
+	private int id;
+	 private String name;
 
 	
 	//getter and setter method
@@ -23,7 +23,7 @@ class TerminalsDTO
 	{
 		return name;
 	}
-	public void setName(String Name)
+	public void setName(String name)
 	{
 		this.name = name;
 	}

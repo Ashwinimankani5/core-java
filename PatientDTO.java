@@ -4,6 +4,15 @@ class PatientDTO
 	{
 		System.out.println("PatientDTO is created");
 	}
+	
+	
+	@Override
+	public int hashCode()
+	{
+		return this.id;
+	}
+	
+	
 	private int id;
 	private String name;
 	private	String address;
@@ -52,7 +61,11 @@ class PatientDTO
 	{
 		this.contactNo = contactNo;
 	}
-
-
+	
+	//state of an object
+	@Override         
+	public String toString(){
+		return " [patientDTO:Id="+this.id+",Name="+this.name+ ",address = "+this.address +",gender = "+this.gender +",contactNo = "+this.contactNo+"]";          
+	}         
 
 }

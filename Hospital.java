@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Hospital
 {
 	//has many patients
@@ -33,7 +35,112 @@ class Hospital
 			 for(int  i=0; i<dto.length;i++)
 			 {
 				 System.out.println(dto[i].getId()+ "  " +dto[i].getName() + "  " +dto[i].getAddress() 
-				 /*+ "  " +dto[i].getGender() */+ " " +dto[i].getContactNo()+ "  ");
+				 + "  " +dto[i].getGender() + " " +dto[i].getContactNo()+ "  ");
 			 }
 	}
+	
+	public boolean updatedPatientAddressById(int id, String address)
+	{
+		System.out.println("inside PatientUpdatedAddressById()");
+			boolean updatedAddress = false;
+		
+			for(int i=0; i<dto.length; i++)
+			{
+				if(dto[i].getId() == id){
+				dto[i].setAddress(address);
+				updatedAddress = true;
+				System.out.println("updated patient address is");
+				}
+				else{
+					System.out.println("no match found to update");
+				}
+			
+			}
+			return updatedAddress;
+		
+	}
+	
+		public boolean updatedPatientNameById(int id, String name)
+	{
+		System.out.println("inside updatedPatientNameById()");
+			boolean updatedName = false;
+		
+			for(int i=0; i<dto.length; i++)
+			{
+				if(dto[i].getId() == id){
+				dto[i].setName(name);
+				updatedName = true;
+				System.out.println("updated patient name is");
+				}
+				else{
+					System.out.println("no match found to update name");
+				}
+			
+			}
+			return updatedName;
+		
+	}
+	
+			public boolean updatedPatientNameByContactNo(long contactNo, String name)
+	{
+		System.out.println("inside UpdatedPatientNameByContactNo()");
+			boolean isUpdatedName = false;
+		
+			for(int i=0; i<dto.length; i++)
+			{
+				if(dto[i].getContactNo() == contactNo){
+				dto[i].setName(name);
+				isUpdatedName = true;
+				System.out.println("updated patient name is");
+				}
+				else{
+					System.out.println("no match found to update name");
+				}
+			
+			}
+			return isUpdatedName;
+	}        
+	
+	public boolean deletePatientByName(String name)
+	{
+		System.out.println("inside deletePatientNameById()");
+		boolean deleteName = false;
+		int i,j;
+		for( i=0,j=0; j<dto.length; j++)
+		{// harshit.equals ignore case(name)
+			if(!dto[j].getName().equals(name)){		
+				//dto[i] = null;
+			dto[i++]  = dto[j];
+			deleteName= true;
+			}
+			
+				else {
+					System.out.println("");
+				}
+	}
+			dto = Arrays.copyOf(dto,i);
+	return deleteName;
+	}
+	
+	public boolean deletePatientById(int id)
+	{
+		System.out.println("inside deletePatientNameById()");
+		boolean deleteId = false;
+		int i,j;
+		for( i=0,j=0; j<dto.length; j++)
+		{
+			if(!(dto[j].getId()==id)){		
+				dto[i++]  = dto[j];
+			
+			deleteId = true;
+	
+		}
+		else{
+			System.out.println("no match found to delete");
+		}
+		
+	}
+	dto = Arrays.copyOf(dto,i);
+	return deleteId; 
+	}   
 }

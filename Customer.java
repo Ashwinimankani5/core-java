@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Customer
 {
 	 OrderDTO[] rtd;
@@ -14,7 +16,7 @@ class Customer
 		 System.out.println("insideorderis creted");
 		 boolean isAdded = false;
 		 
-		 if(xyz != null && xyz.getAddress() !=null)
+		 if(xyz != null && xyz.getName() !=null)
 		 {
 			 rtd[index++]=xyz;
 			 isAdded = true;
@@ -32,8 +34,75 @@ class Customer
 		  System.out.println("Item details are created");
 		 for(int i=0;i<rtd.length;i++)
 		 {
-			 System.out.println(rtd[i].getName()  + "  " +rtd[i].getId()  +
-			 "  " +rtd[i].getAddress()  + "  " +rtd[i].getPrice()  + "  " );
+			 System.out.println(rtd[i].getName() + "  " + rtd[i].getQuantity() + "  " +rtd[i].getId()  +
+			 "  " +rtd[i].getType()  + "  " +rtd[i].getPrice()  + "  " );
 		 }
 	 }
+	 
+
+	 
+	 
+	 public boolean updateOrderNameById(int id,String name)
+	 {
+		 System.out.println("inside updateOrderNameById()");
+		 boolean updateName = false;
+		 for(int i=0; i<rtd.length ; i++)
+		 {
+			 if(rtd[i].getId() == id)
+			 {
+				 rtd[i].setName(name);
+			 updateName = true;
+			 System.out.println("");
+			 }
+		 else 
+		 {
+			 System.out.println("no match found to update");
+		 }
+	 }
+	  return updateName;
+	 }
+	 
+	 public boolean updateOrderTypeByName(String name,String type)
+	 {
+		 System.out.println("inside updateOrderTypeById()");
+		 boolean updateType = false;
+		 for(int i=0; i<rtd.length ; i++)
+		 {
+			 if(rtd[i].getName().equals(name))
+			 {
+				 rtd[i].setType(type);
+			 updateType = true;
+			 System.out.println("");
+			 }
+		 else 
+		 {
+			 System.out.println("no match found to update");
+		 }
+	 }
+	  return updateType;
+	 }
+	 
+	 public boolean deleteOrderNameById(int id,String name)
+	 {
+		 System.out.println("inside deleteOrderNameById()");
+		 boolean deleteName = false;
+		 int i,j;
+		 for(i=0,j=0; j<rtd.length ; j++)
+		 {
+			 if(!(rtd[i].getId() == id))
+			 {
+				 rtd[i++] = rtd[j];
+			 deleteName = true;
+			 System.out.println("");
+			}
+			else 
+			{
+			 System.out.println(" ");
+			}
+		}
+	 rtd = Arrays.copyOf(rtd,i);
+	  return deleteName;
+	 }
+	 
+	 
 }

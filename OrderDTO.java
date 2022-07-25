@@ -1,8 +1,9 @@
 class OrderDTO
 {
 	private String name;
+	private int quantity;
 	private int id;
-	private String address;
+	private String type;
 	private double price;
 	
 	public OrderDTO()
@@ -18,6 +19,14 @@ class OrderDTO
 	{
 		this.name = name;
 	}
+	public int getQuantity()
+	{
+		return quantity;
+	}
+	public void setQuantity(int quantity)
+	{
+		this.quantity = quantity;
+	}
 	
 	public int getId()
 	{
@@ -28,13 +37,13 @@ class OrderDTO
 		this.id = id;
 	}
 	
-	public String getAddress()
+	public String getType()
 	{
-		return address;
+		return type;
 	}
-	public void setAddress(String address)
+	public void setType(String type)
 	{
-		this.address = address;
+		this.type = type;
 	}
 	
 	public double getPrice()

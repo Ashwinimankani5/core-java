@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Hotel
 {
 	 FoodDTO[] rtd;
@@ -32,8 +34,94 @@ class Hotel
 		  System.out.println("Item details are created");
 		 for(int i=0;i<rtd.length;i++)
 		 {
-			 System.out.println(rtd[i].getName()  + "  " +rtd[i].getId()  +
+			 System.out.println(rtd[i].getName() + "   " +rtd[i].getType() + "  " +rtd[i].getId()  +
 			 "  " +rtd[i].getPrice()  + "  " );
 		 }
 	 }
+	 
+	 public boolean updateOrderNameById(int id,String name)
+	 {
+		 System.out.println("inside updateOrderNameById()");
+		 boolean updateName = false;
+		 for(int i=0; i<rtd.length ; i++)
+		 {
+			 if(rtd[i].getId() == id)
+			 {
+				 rtd[i].setName(name);
+			 updateName = true;
+			 System.out.println("");
+			 }
+		 else 
+		 {
+			 System.out.println("no match found to update");
+		 }
+	 }
+	  return updateName;
+	 }
+	 
+	  public boolean updateOrderPriceByType(String type,double price)
+	 {
+		 System.out.println("inside updateOrderNameById()");
+		 boolean updatePrice = false;
+		 for(int i=0; i<rtd.length ; i++)
+		 {
+			 if(rtd[i].getType() == type)
+			 {
+				 rtd[i].setPrice(price);
+			 updatePrice = true;
+			 System.out.println("Entre the updated food price");
+			 }
+		 else 
+		 {
+			 System.out.println("no match found to update");
+		 }
+	 }
+	  return updatePrice;
+	 }
+	// updateOrderPriceByName
+	 
+	 public boolean deleteOrderNameById(int id,String name)
+	 {
+		 System.out.println("inside deleteOrderNameById()");
+		 boolean deleteName = false;
+		 int i,j;
+		 for(i=0,j=0; j<rtd.length ; j++)
+		 {
+			 if(!(rtd[i].getId() == id))
+			 {
+				 rtd[i++] = rtd[j];
+			 deleteName = true;
+			 System.out.println("");
+			}
+			else 
+			{
+			 System.out.println("no match found to update");
+			}
+		}
+//	 rtd = Arrays.copyOf(rtd,i);
+	  return deleteName;
+	 }
+	
+	 public boolean deleteOrderByType(String type)
+	 {
+		 System.out.println("inside deleteOrderNameById()");
+		 boolean deleteType = false;
+		 int i,j;
+		 for(i=0,j=0; j<rtd.length ; j++)
+		 {
+			 if(!(rtd[i].getType() == type))
+			 {
+				 rtd[i++] = rtd[j];
+			 deleteType = true;
+			 System.out.println(" Entre order to delete");
+			}
+			else 
+			{
+			 System.out.println("no match found to update");
+			}
+		}
+//	 rtd = Arrays.copyOf(rtd,i);
+	  return deleteType;
+	 }
+	 
 }

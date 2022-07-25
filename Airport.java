@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Airport
 {
 	TerminalsDTO[] c;// = new Terminals[];
@@ -32,5 +34,50 @@ class Airport
 		{
 			System.out.println(c[i].getId()+ "  " + c[i].getName()+ "   " );
 		}
+	}
+	public boolean updateTerminalNameById(int id,String name)
+	{
+		System.out.println("inside updateTerminalNameById()");
+		boolean updateName = false;
+		for(int i=0; i<c.length; i++)
+		{
+			if(c[i].getId()==id)
+			{
+				c[i].setName(name);
+			updateName = true;
+			System.out.println("Entre the terminal name to update");
+			}
+		else
+		{
+			System.out.println("No match found to update name");
+		}
+		
+	}
+	return updateName;
+	}
+	
+	
+	public boolean deleteTerminalById(int id,String name)
+	{
+		System.out.println("inside the deleteTerminalById()");
+		boolean  deleteName = false;
+		int i,j;
+		for(i=0,j=0; j<c.length; j++)
+		{
+			if(!(c[j].getId()== id))
+			{
+				c[i++] =c[j];
+				deleteName = true;
+				System.out.println("Entre name to delete");
+			}
+			else
+			{
+				System.out.println("no match found");
+			}
+		
+		
+		}
+		c = Arrays.copyOf(c,i);
+		return deleteName;
 	}
 }
