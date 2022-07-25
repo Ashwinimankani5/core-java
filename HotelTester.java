@@ -31,10 +31,10 @@ class HotelTester
 		
 		hot.makeOrder(order);
 	}
-	//	hot.getItemDetails();
+		hot.getItemDetails();
 		
 
-		//update name by id
+		update name by id
 		
 		/*System.out.println("Entre the existing id");
 		int existingId =sc.nextInt();

@@ -9,7 +9,7 @@ class AirportTester
 		System.out.println("Enter the size of terminals");
 		int size = sc.nextInt();
 
-		Airport air = new Airport(size);
+		Airport air = new Airport1Impl();
 		for(int i=0; i<size; i++)
 		{
 				
@@ -26,7 +26,7 @@ class AirportTester
 		
 		air.creatTerminals(abc);
 		
-		//air.getTerminal();
+		air.getTerminal();
 		}
 		air.getTerminalDetail();
 		
@@ -35,7 +35,7 @@ class AirportTester
 			System.out.println("Entre 1 to fetch terminals details");
 			System.out.println("Entre 2 for update book name by id");
 			System.out.println("Entre 3 for delete name by id");
-			System.out.println("Entre 4 for getting all book details");
+			
 			int choice = sc.nextInt();
 		   System.out.println("Entre the choice");
 		
@@ -65,17 +65,13 @@ class AirportTester
 		                 
 		                 air.getTerminalDetail();
 						break;
-				case 4 :  TerminalsDTO abc = new TerminalsDTO();
-							abc.setId(1);
-							abc.setName("name");
-							System.out.println(abc);
-						break;
+				
 				default :System.out.println("No match found");
 						break;
 			}
 			System.out.println(" Doyou want to continue  entre Y/N");
 			 option  = sc.next();
-		}while(option.equals("Y"));     
+		}while(option.equals("Y"));        
 	}
 		
 		

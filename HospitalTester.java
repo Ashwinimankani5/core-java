@@ -9,7 +9,7 @@ class HospitalTester
 	System.out.println("Enter the no of patients available");
 	int size = sc.nextInt();
 	
-	Hospital hos = new Hospital(size);
+	Hospital hos = new Hospital1Impl();
 	for(int i= 0; i< size; i++)
 	{
 	System.out.println(" Entre Patient id");	
@@ -33,7 +33,7 @@ class HospitalTester
 	
 	hos.createPatient(dto);
    }
-   hos.getPatientDetails();
+/*   hos.getPatientDetails();
  
 	String option=null;
 	do{
@@ -125,7 +125,7 @@ class HospitalTester
 			 option  = sc.next();
 			 
 		}while(option.equals("Y")); 
-		
+		  */
 	
 	/*	PatientDTO dto1 = new PatientDTO();
 	 

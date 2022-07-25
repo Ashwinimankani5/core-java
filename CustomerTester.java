@@ -9,7 +9,7 @@ class CustomerTester
 	System.out.println("Enter total number of orders");
 	int size = sc.nextInt();
 
-	Customer cus = new Customer(size);
+	Customer cus = new Customer1Impl();
 	for(int i=0; i<size; i++)
 	{
 		System.out.println("Entre order name");
@@ -34,9 +34,9 @@ class CustomerTester
 		
 		cus.makeOrder(order);
 	}
-		cus.getItemDetails();
+	cus.getItemDetails();
 		
-	/*	//update name by id
+		//update name by id
 		
 		System.out.println("Entre the existing id");
 		int existingId =sc.nextInt();
@@ -104,17 +104,7 @@ class CustomerTester
 		                 cus.deleteOrderNameById(exstingId2,deleteName1);
 						 cus.getItemDetails();
 						 break;
-				case 5 ://get all details of order
-						OrderDTO order = new OrderDTO();
-		
-		                  order.setName("name");
-		                  order.setQuantity(250);
-		                  order.setId(1);
-		                  order.setType("type");
-		                  order.setPrice(50);
-		                  System.out.println(order);
-		                  cus.getItemDetails();
-						  break;
+				
 				default : 
 		                 		System.out.println("no match found");
 								break;
@@ -125,7 +115,7 @@ class CustomerTester
 			option = sc.next();
 		}while(option.equals("Y"));
 		   
-		
+		*/
 		
 		
 		
