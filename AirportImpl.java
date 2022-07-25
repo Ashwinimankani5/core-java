@@ -1,2 +1,0 @@
-class AirportImpl extends AirportImpl{
-}

@@ -1,0 +1,32 @@
+package com.xworkz.airport.dto;
+
+public class TerminalsDTO {
+		
+	public TerminalsDTO()
+	{
+		System.out.println("terminal is created");
+	}
+	
+	private int id;
+	 private String name;
+
+	
+	//getter and setter method
+	
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+}
